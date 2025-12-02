@@ -1,0 +1,34 @@
+@model List<BancoAppWeb.Models.Divisa>
+@using System.Globalization
+
+<link rel="stylesheet" href="~/css/divisas-cards.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="~/js/divisas.js"></script>
+
+<h2 class="text-center mt-3">Divisas Disponibles</h2>
+<p class="text-center text-muted">Actualizado: @DateTime.Now.ToString("dd MMM yyyy")</p>
+
+<div class="divisas-grid">
+    @foreach (var d in Model)
+    {
+        // Forzar punto decimal para JavaScript (evitar 62,45)
+        var ventaJs = d.Venta.ToString(CultureInfo.InvariantCulture);
+        var compraJs = d.Compra.ToString(CultureInfo.InvariantCulture);
+
+        <div class="divisa-card"
+             onclick="abrirModal('@d.Nombre', '@d.Codigo', @ventaJs, @compraJs)">
+            <img src="~/img/divisas/@d.IconoBandera" class="icono-divisa" />
+            <h4>@d.Nombre (@d.Codigo)</h4>
+            <p><strong>Venta:</strong> RD$ @d.Venta</p>
+            <p><strong>Compra:</strong> RD$ @d.Compra</p>
+        </div>
+    }
+</div>
+
+<hr />
+
+<h3 class="text-center mt-4">Gráfica de Tendencia Simulada</h3>
+<canvas id="divisaChart" style="width:80%; margin:auto; max-width: 900px;"></canvas>
+
+<!-- Modal para convertir -->
+<partial name="_ConversionModal" /> 

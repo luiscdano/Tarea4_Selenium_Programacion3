@@ -1,0 +1,60 @@
+/* HERO SECTION */
+.hero-section {
+    background: linear-gradient(135deg, #003366, #004080);
+    color: white;
+    padding: 120px 0;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 90%;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+    padding: 12px 30px;
+    border-radius: 8px;
+}
+
+.servicios-section {
+    padding: 50px 0;
+}
+
+/* TARJETAS */
+.servicio-card {
+    text-align: center;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.servicio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* IMÁGENES GRANDES */
+.servicio-img {
+    width: 200px; /* Aumentado 3.5 veces el tamaño original */
+    height: 200px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+.servicio-card a {
+    text-decoration: none;
+    color: inherit;
+} 

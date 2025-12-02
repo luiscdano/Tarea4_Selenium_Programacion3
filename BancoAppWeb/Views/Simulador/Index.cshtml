@@ -1,0 +1,37 @@
+@model BancoAppWeb.Models.PrestamoSimulacion
+
+@{
+    ViewData["Title"] = "Simulador de Préstamos";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary fw-bold mb-4">Simulador de Préstamos</h2>
+
+    <form asp-action="Index" method="post" class="card p-4 shadow">
+        <div class="mb-3">
+            <label>Monto Solicitado (RD$)</label>
+            <input asp-for="Monto" class="form-control" />
+            <span asp-validation-for="Monto" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label>Plazo (Meses)</label>
+            <input asp-for="PlazoMeses" class="form-control" />
+            <span asp-validation-for="PlazoMeses" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label>Tasa de Interés Anual (%)</label>
+            <input asp-for="TasaInteresAnual" class="form-control" />
+            <span asp-validation-for="TasaInteresAnual" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">
+            Calcular Préstamo
+        </button>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

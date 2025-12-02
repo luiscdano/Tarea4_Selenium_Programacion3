@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="1">
+
+    <listeners>
+        <listener class-name="listeners.ScreenshotListener"/>
+        <listener class-name="listeners.ReportListener"/>
+    </listeners>
+
+    <test name="All Tests">
+        <classes>
+            <class name="tests.RegistrarClienteTest"/>
+            <class name="tests.ListarClientesTest"/>
+        </classes>
+    </test>
+
+</suite> 

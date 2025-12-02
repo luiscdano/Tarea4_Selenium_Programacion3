@@ -1,0 +1,54 @@
+@model IEnumerable<BancoAppWeb.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Clientes";
+    var clientes = (Model ?? Enumerable.Empty<BancoAppWeb.Models.Cliente>()).ToList();
+}
+
+<div class="d-flex justify-content-between align-items-center mt-3">
+    <h1 class="mb-0">Clientes</h1>
+    <a class="btn btn-primary" asp-action="Create">Registrar Cliente</a>
+</div>
+
+@if (TempData["SuccessMessage"] is string successMessage)
+{
+    <div class="alert alert-success mt-3" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!clientes.Any())
+{
+    <div class="alert alert-info mt-4" role="alert">
+        No hay clientes registrados.
+    </div>
+}
+else
+{
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var c in clientes)
+        {
+            <tr>
+                <td>@c.Nombre</td>
+                <td>@c.Apellido</td>
+                <td>@c.Telefono</td>
+                <td>@c.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@c.Id" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@c.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

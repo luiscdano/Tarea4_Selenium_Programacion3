@@ -1,0 +1,30 @@
+@model IEnumerable<BancoAppWeb.Models.Producto>
+
+@{
+    ViewData["Title"] = "Productos Bancarios";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4 text-primary fw-bold">Nuestros Productos Bancarios</h2>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="@item.ImagenUrl" class="card-img-top" alt="@item.Nombre" style="height:160px; object-fit:contain;" />
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Nombre</h5>
+                        <p class="card-text">@item.Descripcion</p>
+                        @if (item.TasaInteres > 0)
+                        {
+                            <p class="text-muted">Tasa: <strong>@item.TasaInteres%</strong></p>
+                        }
+                        <a href="#" class="btn btn-primary w-100 mb-2">Más detalles</a>
+                        <a href="/Identity/Account/Login" class="btn btn-warning w-100">Solicitar</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div> 

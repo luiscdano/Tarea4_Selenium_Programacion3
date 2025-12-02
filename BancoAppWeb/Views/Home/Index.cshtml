@@ -1,0 +1,138 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<!-- Hero principal -->
+<section style="background-color:#004173; color:white; padding:80px 0; text-align:center;">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">Tu Banco Digital de Confianza</h1>
+        <p class="lead mb-4">
+            Gestiona tus finanzas, realiza conversiones, simula préstamos y consulta divisas en tiempo real.
+        </p>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a asp-controller="Divisas" asp-action="Index" class="btn btn-primary btn-lg px-4"
+               style="background-color:#0cb7f2; border-color:#0cb7f2;">
+                Ver Divisas
+            </a>
+
+            <a asp-controller="Simulador" asp-action="Index" class="btn btn-outline-light btn-lg px-4">
+                Simular Préstamo
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Productos y servicios -->
+<section class="py-5" style="background-color:#f7f8fc;">
+    <div class="container">
+        <h2 class="text-center mb-5">Nuestros Productos y Servicios</h2>
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- Cuentas Bancarias -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a asp-controller="Cuentas" asp-action="Index"
+                   class="text-decoration-none text-reset d-block h-100">
+                    <div class="card shadow-sm border-0 h-100 text-center p-4">
+                        <img src="~/img/home/cuentas.png"
+                             alt="Cuentas bancarias"
+                             class="mx-auto mb-3"
+                             style="width:130px; height:auto;" />
+                        <h4 class="mb-2">Cuentas Bancarias</h4>
+                        <p class="mb-0">
+                            Ahorros, corriente y cuentas digitales 100% en línea.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Tarjetas de Crédito -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a asp-controller="Tarjetas" asp-action="Index"
+                   class="text-decoration-none text-reset d-block h-100">
+                    <div class="card shadow-sm border-0 h-100 text-center p-4">
+                        <img src="~/img/home/tarjeta.png"
+                             alt="Tarjetas de crédito"
+                             class="mx-auto mb-3"
+                             style="width:130px; height:auto;" />
+                        <h4 class="mb-2">Tarjetas de Crédito</h4>
+                        <p class="mb-0">
+                            Solicita tu tarjeta y controla tus gastos desde la web.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Simulador de Préstamos -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a asp-controller="Simulador" asp-action="Index"
+                   class="text-decoration-none text-reset d-block h-100">
+                    <div class="card shadow-sm border-0 h-100 text-center p-4">
+                        <img src="~/img/home/simulador.png"
+                             alt="Simulador de préstamos"
+                             class="mx-auto mb-3"
+                             style="width:130px; height:auto;" />
+                        <h4 class="mb-2">Simulador de Préstamos</h4>
+                        <p class="mb-0">
+                            Calcula cuotas, montos e intereses en segundos.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Divisas -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a asp-controller="Divisas" asp-action="Index"
+                   class="text-decoration-none text-reset d-block h-100">
+                    <div class="card shadow-sm border-0 h-100 text-center p-4">
+                        <img src="~/img/home/divisas.png"
+                             alt="Divisas"
+                             class="mx-auto mb-3"
+                             style="width:130px; height:auto;" />
+                        <h4 class="mb-2">Divisas</h4>
+                        <p class="mb-0">
+                            Consulta tasas, conviértelas y analiza tendencias simuladas.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Call to action / Crear Cuenta -->
+<section style="background-color:#004173; color:white; padding:60px 0; text-align:center;">
+    <div class="container">
+        <h2 class="mb-3">Únete al banco del futuro</h2>
+        <p class="mb-4">
+            Regístrate ahora y disfruta de todos nuestros servicios digitales.
+        </p>
+        <!-- Ajusta esta ruta si tu registro está en otro lugar -->
+        <a href="/Identity/Account/Register" class="btn btn-warning btn-lg px-5">
+            Crear Cuenta
+        </a>
+    </div>
+</section>
+
+<!-- Somos más que un banco -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-md-6">
+                <h2>Somos más que un banco</h2>
+                <p>
+                    BancoAppWeb es una plataforma digital dominicana que ofrece servicios financieros,
+                    conversiones de divisas, simuladores de préstamos y herramientas inteligentes para gestionar tu economía.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="~/img/home/banco-digital.png"
+                     alt="Banco digital"
+                     class="img-fluid"
+                     style="max-width:380px; height:auto;" />
+            </div>
+        </div>
+    </div>
+</section> 

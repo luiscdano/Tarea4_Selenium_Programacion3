@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="BancoAppWeb Suite" verbose="1">
+
+    <listeners>
+        <listener class-name="listeners.ScreenshotListener"/>
+        <listener class-name="listeners.ReportListener"/>
+    </listeners>
+
+    <test name="Suite BancoAppWeb">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.ErrorLoginTest"/>
+            <class name="tests.RegistrarUsuarioTest"/>
+            <class name="tests.RegistrarClienteTest"/>
+            <class name="tests.ListarClientesTest"/>
+            <class name="tests.EditarClienteTest"/>
+            <class name="tests.EliminarClienteTest"/>
+        </classes>
+    </test>
+
+</suite> 

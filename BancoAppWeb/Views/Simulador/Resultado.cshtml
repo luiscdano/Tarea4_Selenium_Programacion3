@@ -1,0 +1,22 @@
+@model BancoAppWeb.Models.PrestamoSimulacion
+
+@{
+    ViewData["Title"] = "Resultado de Simulación";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-success fw-bold mb-4">Resultado de la Simulación</h2>
+
+    <table class="table table-bordered table-hover">
+        <tr><th>Monto Solicitado</th><td>RD$ @Model.Monto</td></tr>
+        <tr><th>Plazo</th><td>@Model.PlazoMeses meses</td></tr>
+        <tr><th>Tasa Anual</th><td>@Model.TasaInteresAnual %</td></tr>
+        <tr class="table-primary"><th>Cuota Mensual Estimada</th><td>RD$ @Model.CuotaMensual</td></tr>
+        <tr class="table-success"><th>Total a Pagar</th><td>RD$ @Model.TotalPagar</td></tr>
+    </table>
+
+    <div class="mt-4 text-center">
+        <a class="btn btn-secondary" href="/Simulador">Nueva Simulación</a>
+        <a class="btn btn-warning" href="/Identity/Account/Login">Solicitar Préstamo</a>
+    </div>
+</div>
