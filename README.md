@@ -70,7 +70,11 @@ Estas pruebas fueron diseñadas para validar el correcto comportamiento del sist
 Video Demostrativo
 
 El video público mostrando la ejecución de las pruebas se encuentra en:
-🔗 (Colocar enlace aquí cuando esté listo)
+
+
+⸻
+
+http://localhost:5239/Identity/Account/Login
 
 ⸻
 
